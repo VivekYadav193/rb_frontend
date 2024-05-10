@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const RestaurantCard = (props) => {
   const { resData } = props;
 
@@ -20,6 +22,19 @@ const RestaurantCard = (props) => {
       {/* Display loggedInUser information here if available */}
     </div>
   );
+};
+
+RestaurantCard.propTypes = {
+  resData: PropTypes.shape({
+    cloudinaryImageId: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    cuisines: PropTypes.arrayOf(PropTypes.string).isRequired,
+    avgRating: PropTypes.number.isRequired,
+    sla: PropTypes.shape({
+      deliveryTime: PropTypes.number.isRequired,
+    }).isRequired,
+    costForTwo: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default RestaurantCard;
