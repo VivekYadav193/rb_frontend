@@ -1,6 +1,4 @@
-import  { useState } from "react";
-const backgroundImage =
-  "https://plus.unsplash.com/premium_photo-1669048776605-28ea2e52ae66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+import { useState } from "react";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -16,67 +14,73 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can handle form submission. For example, send formData to your backend.
     console.log(formData);
   };
 
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen"
+      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center bg-opacity-80"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundColor: "rgba(255, 255, 255, 0.8)", // Opacity
+        backgroundImage: `url("https://plus.unsplash.com/premium_photo-1669048776605-28ea2e52ae66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
       }}
     >
-      <div className="bg-white bg-opacity-90 p-6 rounded-md">
-        <h1 className="text-2xl font-bold mb-5">Contact Us</h1>
-        <form onSubmit={handleSubmit} className="w-full max-w-md">
-          <label className="block mb-2">
-            Name:
+      <div className="bg-white bg-opacity-90 p-6 rounded-md shadow-lg max-w-md w-full">
+        <h1 className="text-2xl font-bold mb-5 text-center">Contact Us</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Name:
+            </label>
             <input
               type="text"
               name="name"
               onChange={handleChange}
-              className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
-          </label>
-          <label className="block mb-2">
-            Email:
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Email:
+            </label>
             <input
               type="email"
               name="email"
               onChange={handleChange}
-              className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
-          </label>
-          <label className="block mb-2">
-            Query Type:
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Query Type:
+            </label>
             <select
               name="queryType"
               onChange={handleChange}
-              className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             >
               <option value="">--Please choose an option--</option>
               <option value="booking">Booking</option>
               <option value="feedback">Feedback</option>
               <option value="support">Support</option>
             </select>
-          </label>
-          <label className="block mb-2">
-            Message:
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Message:
+            </label>
             <textarea
               name="message"
               onChange={handleChange}
-              className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
-          </label>
-          <input
-            type="submit"
-            value="Submit"
-            className="w-full px-4 py-2 mt-4 text-white bg-blue-500 rounded-md cursor-pointer hover:bg-blue-600"
-          />
+          </div>
+          <div className="flex items-center justify-between">
+            <input
+              type="submit"
+              value="Submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            />
+          </div>
         </form>
       </div>
     </div>
